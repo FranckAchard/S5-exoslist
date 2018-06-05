@@ -4,18 +4,18 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<div>
-  <ul>
-    <li *ngFor="let user of users ; let i = index" (click)="selectUser(i)"> user num {{i}} = {{user.name}} </li>
-  </ul>
-</div>
-<div *ngIf="selected">
-  <ul>
-    <li>id = {{selectedUser.id}}</li>
-    <li>name = {{selectedUser.name}}</li>
-    <li>image = {{selectedUser.image}}</li>
-    <li>jobTitle = {{selectedUser.jobTitle}}</li>
-  </ul>
-  <img src={{selectedUser.image}} alt="">
-
+<div class="showUsers">
+  <div class="listUsers">
+    <ul>
+      <li *ngFor="let user of users ; let i = index">
+        <a (click)="selectUser(i)" href="#">{{user.name}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="userItems" *ngIf="selected">
+    <h2>id = {{selectedUser.id}}</h2>
+    <h3>name = {{selectedUser.name}}</h3>
+    <h4>jobTitle = {{selectedUser.jobTitle}}</h4>
+    <img src={{selectedUser.image}} alt="">
+  </div>
 </div>
