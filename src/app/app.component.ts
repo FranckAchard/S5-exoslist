@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Exos list';
   users = [
     {
       'id': 0,
@@ -27,4 +27,10 @@ export class AppComponent {
       'jobTitle': 'Dynamic Markets Planner'
     }
   ];
+  selectedUser = this.users[0];
+  selected = false;
+  selectUser(i) {
+    this.selected = true;
+    this.selectedUser = this.users[i];
+  }
 }
