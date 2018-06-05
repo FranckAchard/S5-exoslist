@@ -7,6 +7,7 @@
 <div class="showUsers">
   <div class="listUsers">
     <ul>
+	  <!-- on peut aussi passer un user à selectUser, ce qui permet de se passer de l'index -->
       <li *ngFor="let user of users ; let i = index">
         <a (click)="selectUser(i)" href="#">{{user.name}}</a>
       </li>
